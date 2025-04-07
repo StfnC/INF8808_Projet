@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "dash>=3.0.0",
+    "flask-failsafe>=0.2",
     "folium>=0.19.5",
     "geojson>=3.2.0",
     "mapclassify>=2.8.1",

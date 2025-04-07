@@ -176,6 +176,15 @@ wheels = [
 ]
 
 [[package]]
+name = "flask-failsafe"
+version = "0.2"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "flask" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/76/d8/d968f17fcca8b9e006ff537ae25b10293c906fbaf15d14a222affcc19cc3/Flask-Failsafe-0.2.tar.gz", hash = "sha256:10df61daaad241b5970504acb98fb26375049fe1adaf23f28bc9e257c28f768b", size = 2870 }
+
+[[package]]
 name = "folium"
 version = "0.19.5"
 source = { registry = "https://pypi.org/simple" }
@@ -583,6 +592,7 @@ version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
     { name = "dash" },
+    { name = "flask-failsafe" },
     { name = "folium" },
     { name = "geojson" },
     { name = "mapclassify" },
@@ -596,6 +606,7 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "dash", specifier = ">=3.0.0" },
+    { name = "flask-failsafe", specifier = ">=0.2" },
     { name = "folium", specifier = ">=0.19.5" },
     { name = "geojson", specifier = ">=3.2.0" },
     { name = "mapclassify", specifier = ">=2.8.1" },
