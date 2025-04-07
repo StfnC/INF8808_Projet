@@ -2,6 +2,8 @@ from dash import Dash, html, dcc
 import pandas as pd
 import plotly.express as px
 
+from visualisation_3 import setup_viz_3
+
 app = Dash(__name__)
 
 df_bar = pd.DataFrame(
@@ -27,16 +29,6 @@ app.layout = html.Div(
                 dcc.Graph(id="graph1", figure=fig),
             ]
         ),
-        html.Div(
-            [
-                html.H1(children="Second Viz"),
-                html.Div(
-                    children="""
-            Example for the second viz.
-        """
-                ),
-                dcc.Graph(id="graph2", figure=fig),
-            ]
-        ),
+        html.Div(setup_viz_3(app)),
     ]
 )
