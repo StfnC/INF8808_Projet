@@ -36,7 +36,7 @@ def create_visualization(combined_df: pd.DataFrame):
                     size='Total',
                     hover_name='country',
                     text='country_code',
-                    color_continuous_scale='Plasma',
+                    color_continuous_scale='Hot',
                     labels={
                         'total_athletes': 'Nombre d\'athlètes',
                         'Total': 'Total des médailles',
