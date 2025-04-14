@@ -5,6 +5,7 @@ import plotly.express as px
 from visualisation_3 import setup_viz_3
 from visualisation_5 import setup_viz_5
 from visualisation_6 import setup_viz_6 
+from visualisation_7 import setup_vis_7
 app = Dash(__name__)
 
 df_bar = pd.DataFrame(
@@ -33,5 +34,6 @@ app.layout = html.Div(
         html.Div(setup_viz_3(app)),
         html.Div(setup_viz_5(app)),
         html.Div(setup_viz_6(app)),
+        html.Div(setup_vis_7(app)),
     ]
 )
