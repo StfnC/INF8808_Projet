@@ -1,7 +1,7 @@
 from dash import Dash, html, dcc
 import pandas as pd
 import plotly.express as px
-
+from visualisation_2 import setup_viz_2
 from visualisation_3 import setup_viz_3
 from visualisation_5 import setup_viz_5
 from visualisation_6 import setup_viz_6 
@@ -20,17 +20,7 @@ fig = px.bar(df_bar, x="Letters", y="Count", color="Language", barmode="group")
 
 app.layout = html.Div(
     children=[
-        html.Div(
-            [
-                html.H1(children="First Viz"),
-                html.Div(
-                    children="""
-            Example for the first viz.
-        """
-                ),
-                dcc.Graph(id="graph1", figure=fig),
-            ]
-        ),
+        html.Div(setup_viz_2(app)),
         html.Div(setup_viz_3(app)),
         html.Div(setup_viz_5(app)),
         html.Div(setup_viz_6(app)),
