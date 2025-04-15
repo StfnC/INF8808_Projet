@@ -4,7 +4,7 @@ import plotly.express as px
 import numpy as np
 import plotly.graph_objects as go
 
-DATA_PATH = './data'
+DATA_PATH = '../data'
 
 def load_data():
     medals_df = pd.read_csv(f'{DATA_PATH}/medals_total.csv')

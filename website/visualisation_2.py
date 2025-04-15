@@ -23,7 +23,7 @@ def map_country_to_continent(country):
     return 'unknown'  
 
 def setup_viz_2(app):
-    df = pd.read_csv('./data/athletes.csv')
+    df = pd.read_csv('../data/athletes.csv')
     df['country'] = df['country_long'].str.lower()
     df['continent'] = df['country'].apply(map_country_to_continent)
     df['Age'] = 2025 - pd.to_datetime(df['birth_date']).dt.year
@@ -36,7 +36,7 @@ def setup_viz_2(app):
     
     for continent in continents:
         continent_df = df[df['continent'] == continent]
-        grouped_df = continent_df.groupby(['country', 'Age Group']).size().reset_index(name='Count')
+        grouped_df = continent_df.groupby(['country', 'Age Group'], observed=False).size().reset_index(name='Count')
         pivot_df = grouped_df.pivot(index='country', columns='Age Group', values='Count').fillna(0)
         pivot_df = pivot_df.reset_index()
         melted_df = pd.melt(pivot_df, id_vars=['country'], var_name='Age Group', value_name='Count')
