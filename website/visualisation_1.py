@@ -63,15 +63,15 @@ def setup_viz_1(app):
 
     df['discipline'] = df['disciplines'].map(lambda x: x.translate({ord(i): None for i in "[']"}))
     df['Sport Category'] = df['discipline'].map(sport_to_category)
-    available_categories = df['Sport Category'].unique()
+    available_categories = [cat for cat in df['Sport Category'].unique() if str(cat) != 'nan']
 
     @app.callback(
         Output('athletes-sports-heatmap', 'figure'),
-        Input('discipline-dropdown', 'value')
+        Input('sports-categories-dropdown', 'value')
     )
     def update_heatmap(selected_discpline):
         fig = px.density_heatmap(
-            df,
+            df if selected_discpline == "global" else df[df['Sport Category'] == selected_discpline],
             x='Age Group',
             y='Sport Category',
             nbinsx=len(df['Age Group'].unique()),
@@ -98,9 +98,9 @@ def setup_viz_1(app):
         html.P("Select a sports category to view age distribution:"),
         dcc.Dropdown(
             id="sports-categories-dropdown",
-            options=[{"label": "Toutes", "value": "all"}] +
+            options=[{"label": "Toutes", "value": "global"}] +
                     [{"label": discipline, "value": discipline} for discipline in available_categories],
-            value="all"
+            value="global"
         ),
         dcc.Graph(id='athletes-sports-heatmap')
     ])
