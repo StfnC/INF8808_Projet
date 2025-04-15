@@ -6,13 +6,13 @@ import geojson
 
 from utils import categories
 
-DATA_PATH = "./data"
-GEO_PATH = "./data/geojson"
+DATA_PATH = "../data"
+GEO_PATH = "../data/geojson"
 
 
 def load_data():
     medals_df = pd.read_csv(f"{DATA_PATH}/medals.csv")
-    with open(f"{GEO_PATH}/countries.geo.json") as file:
+    with open(f"{GEO_PATH}/countries.geo.json", encoding="utf8") as file:
         countries = geojson.load(file)
     return medals_df, countries
 

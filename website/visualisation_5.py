@@ -4,7 +4,7 @@ import plotly.express as px
 import numpy as np
 from datetime import datetime
 
-DATA_PATH = './data'
+DATA_PATH = '../data'
 
 def load_data():
     medals_df = pd.read_csv(f'{DATA_PATH}/medals.csv')
