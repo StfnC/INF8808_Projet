@@ -1,6 +1,8 @@
 from dash import Dash, html, dcc
 import pandas as pd
 import plotly.express as px
+from visualisation_1 import setup_viz_1
+from visualisation_2 import setup_viz_2
 from visualisation_3 import setup_viz_3
 from visualisation_5 import setup_viz_5
 from visualisation_6 import setup_viz_6 
@@ -26,7 +28,23 @@ app.layout = html.Div(style={'backgroundColor': '#f8f9fa', 'padding': '20px'}, c
                     'marginBottom': '30px',
                     'fontFamily': 'Arial, sans-serif'
                 }),
-        
+      
+        html.Div(style={
+            'backgroundColor': '#ffffff',
+            'padding': '20px',
+            'marginBottom': '30px',
+            'borderRadius': '8px',
+            'border': '1px solid #e1e5eb'
+        }, children=[setup_viz_1(app)]),
+     
+        html.Div(style={
+            'backgroundColor': '#ffffff',
+            'padding': '20px',
+            'marginBottom': '30px',
+            'borderRadius': '8px',
+            'border': '1px solid #e1e5eb'
+        }, children=[setup_viz_2(app)]),
+      
         html.Div(style={
             'backgroundColor': '#ffffff',
             'padding': '20px',
@@ -61,5 +79,7 @@ app.layout = html.Div(style={'backgroundColor': '#f8f9fa', 'padding': '20px'}, c
     ])
 ])
 
+
 if __name__ == '__main__':
     app.run_server(debug=True)
+    

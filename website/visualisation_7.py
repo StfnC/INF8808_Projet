@@ -6,7 +6,7 @@ import numpy as np
 import plotly.graph_objects as go
 import ast
 
-DATA_PATH = './data'
+DATA_PATH = '../data'
 
 def load_data():
     medals_df = pd.read_csv(f'{DATA_PATH}/medals.csv')
