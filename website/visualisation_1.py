@@ -6,8 +6,10 @@ import ast
 import plotly.express as px
 from dash import Dash, dcc, html, Input, Output  
 
+
+DATA_PATH = './data'
 def setup_viz_1(app):
-    df = pd.read_csv('../data/athletes.csv')
+    df = pd.read_csv(f'{DATA_PATH}/athletes.csv')
     df['Age'] = 2025 - pd.to_datetime(df['birth_date']).dt.year
     bins = list(range(df['Age'].min(), df['Age'].max() + 5, 5))
     labels = [f'{i}-{i+4}' for i in range(df['Age'].min(), df['Age'].max(), 5)]

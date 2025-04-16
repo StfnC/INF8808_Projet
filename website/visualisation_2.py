@@ -23,7 +23,7 @@ def map_country_to_continent(country):
     return 'unknown'  
 
 def setup_viz_2(app):
-    df = pd.read_csv('../data/athletes.csv')
+    df = pd.read_csv('./data/athletes.csv')
     df['country'] = df['country_long'].str.lower()
     df['continent'] = df['country'].apply(map_country_to_continent)
     df['Age'] = 2025 - pd.to_datetime(df['birth_date']).dt.year
