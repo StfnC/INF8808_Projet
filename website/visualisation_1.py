@@ -65,44 +65,34 @@ def setup_viz_1(app):
 
     df['discipline'] = df['disciplines'].map(lambda x: x.translate({ord(i): None for i in "[']"}))
     df['Sport Category'] = df['discipline'].map(sport_to_category)
-    available_categories = [cat for cat in df['Sport Category'].unique() if str(cat) != 'nan']
 
-    @app.callback(
-        Output('athletes-sports-heatmap', 'figure'),
-        Input('sports-categories-dropdown', 'value')
-    )
-    def update_heatmap(selected_discpline):
-        fig = px.density_heatmap(
-            df if selected_discpline == "global" else df[df['Sport Category'] == selected_discpline],
+    fig = px.density_heatmap(
+            df,
             x='Age Group',
             y='Sport Category',
             nbinsx=len(df['Age Group'].unique()),
             nbinsy=len(df['Sport Category'].unique()),
             histfunc='count',
             color_continuous_scale='Reds',
-            title=f"Nombre d'athlètes par groupe d'âge et catégorie de sport",
-            labels={'Sport Category': 'Catégorie de sports', 'Age Group': "Groupe d'âge", 'count': "Nombre d'athlètes"},
+            title="Nombre d'athlètes par groupe d'âge et catégorie de sport",
+            labels={
+                'Sport Category': 'Catégorie de sports',
+                'Age Group': "Groupe d'âge",
+                'count': "Nombre d'athlètes"
+            },
             height=600
         )
         
-        fig.update_layout(
-            xaxis_title="Groupe d'âge",
-            yaxis_title='Catégorie de sports',
-            yaxis={'categoryorder': 'total ascending'},
-            coloraxis_colorbar_title='count',
-            margin=dict(l=20, r=20, t=60, b=20)
-        )
-        
-        return fig
-    
+    fig.update_layout(
+        xaxis_title="Groupe d'âge",
+        yaxis_title='Catégorie de sports',
+        yaxis={'categoryorder': 'total ascending'},
+        coloraxis_colorbar_title='count',
+        margin=dict(l=20, r=20, t=60, b=20)
+    )
+
     return html.Div([
-        html.H1("Athlete Age Distribution by Sports Category"),
-        html.P("Select a sports category to view age distribution:"),
-        dcc.Dropdown(
-            id="sports-categories-dropdown",
-            options=[{"label": "Toutes", "value": "global"}] +
-                    [{"label": discipline, "value": discipline} for discipline in available_categories],
-            value="global"
-        ),
-        dcc.Graph(id='athletes-sports-heatmap')
+        html.H1("Répartition par âge des athlètes par catégorie sportive"),
+        dcc.Graph(figure=fig)
     ])
+
