@@ -36,8 +36,10 @@ parallax_sections = [
         'text_color': '#ffffff'
     },
     {
-        'title': "bla bla bla",
-        'description': "bla bla bla",
+        'title': "Gym à 16 ans, tir à 50 : les médailles racontent tout",
+        'description': "On voit que les médailles d'or se concentrent plus sur des disciplines dites traditionnelles comme l'athlétisme et la natation. \n "
+        "À l'inverse, les médailles de bronze sont beaucoup plus dispersées entre les disciplines. \n "
+        "Les sports moins physiques comme l'équitation ou le tir permettent des carrières plus longues, avec des médaillés dans la cinquantaine. Cela est l'inverse de certains sports comme la gymnastique.",
         'viz': setup_viz_5(app),
         'bg_color': '#2ecc71',
         'text_color': '#ffffff'
