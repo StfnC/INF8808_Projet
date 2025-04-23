@@ -89,36 +89,11 @@ def setup_viz_5(app):
     combined_df = join_tables(medals_df, athletes_df)
     combined_df = clean_disciplines_column(combined_df)
 
-    @app.callback(
-        Output("graph5", "figure"),
-        Input("medal-dropdown", "value")
-    )
-    def update_graph(selected_medal):
-        if selected_medal == "all":
-            fig = create_visualization(combined_df)
-        else:
-            filtered_df = combined_df[combined_df["medal_type"] == selected_medal]
-            fig = create_visualization(filtered_df)
-        return fig
+    fig = create_visualization(combined_df)
 
     return html.Div(
         [
             html.H1("Âge et Discipline des Athlètes Médaillés"),
-            html.P("Filtrer par type de médaille"),
-            dcc.Dropdown(
-                id="medal-dropdown",
-                options=[
-                    {"label": "Toutes", "value": "all"},
-                    {"label": "Or", "value": "Gold Medal"},
-                    {"label": "Argent", "value": "Silver Medal"},
-                    {"label": "Bronze", "value": "Bronze Medal"}
-                ],
-                value="all",
-                style={
-                'color': 'black',            
-                'backgroundColor': 'white'    
-            }
-            ),
-            dcc.Graph(id="graph5"),
+            dcc.Graph(id="graph5", figure=fig),
         ]
     )
