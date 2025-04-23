@@ -75,13 +75,13 @@ def setup_viz_1(app):
             y='Sport Category',
             nbinsx=len(df['Age Group'].unique()),
             nbinsy=len(df['Sport Category'].unique()),
-            histfunc='Compte',
+            histfunc='count',
             color_continuous_scale='Reds',
             title="Nombre d'athlètes par groupe d'âge et catégorie de sport",
             labels={
                 'Sport Category': 'Catégorie de sports',
                 'Age Group': "Groupe d'âge",
-                'Compte': "Nombre d'athlètes"
+                'count': "Nombre d'athlètes"
             },
             height=600,
             category_orders={'Age Group': labels},
@@ -91,7 +91,7 @@ def setup_viz_1(app):
         xaxis_title="Groupe d'âge",
         yaxis_title='Catégorie de sports',
         yaxis={'categoryorder': 'total ascending'},
-        coloraxis_colorbar_title='Compte',
+        coloraxis_colorbar_title='count',
         margin=dict(l=20, r=20, t=60, b=20)
     )
 
