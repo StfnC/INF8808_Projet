@@ -1,8 +1,7 @@
 from dash import dcc, html, Input, Output
 import pandas as pd
 import plotly.express as px
-
-DATA_PATH = './data'
+from utils import DATA_PATH
 
 def load_data():
     medals_df = pd.read_csv(f'{DATA_PATH}/medals.csv')

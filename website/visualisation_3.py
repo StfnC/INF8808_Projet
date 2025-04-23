@@ -3,12 +3,9 @@ import pandas as pd
 import plotly.express as px
 import numpy as np
 import geojson
+from utils import categories, DATA_PATH
 
-from utils import categories
-
-DATA_PATH = "./data"
-GEO_PATH = "./data/geojson"
-
+GEO_PATH = f"{DATA_PATH}/geojson"
 
 def load_data():
     medals_df = pd.read_csv(f"{DATA_PATH}/medals.csv")

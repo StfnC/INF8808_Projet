@@ -2,8 +2,7 @@ from dash import Dash, dcc, html, Input, Output
 import pandas as pd
 import plotly.express as px
 import numpy as np
-
-DATA_PATH = './data'
+from utils import DATA_PATH
 
 def load_data():
     medals_df = pd.read_csv(f'{DATA_PATH}/medals_total.csv')
