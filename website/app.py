@@ -84,7 +84,7 @@ for i, section in enumerate(parallax_sections):
                     id=f'content-{i}',
                     className='parallax-content',
                     style={
-                        'maxWidth': '1000px',
+                        'width': '80%',
                         'margin': '0 auto',
                         'opacity': 0,
                         'transform': 'translateY(50px)',
@@ -118,7 +118,7 @@ for i, section in enumerate(parallax_sections):
                                 'borderRadius': '8px',
                                 'boxShadow': '0 4px 20px rgba(0,0,0,0.2)',
                                 'width': '100%',
-                                'maxWidth': '1000px'
+                                
                             },
                             children=[section['viz']]
                         )
