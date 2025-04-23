@@ -80,9 +80,8 @@ def setup_viz_2(app):
             value=continents[0],
             clearable=False,
             style={
-                'color': 'black',              # Text color
-                'backgroundColor': 'white'     # Background color of the dropdown
-            
+                'color': 'black',            
+                'backgroundColor': 'white'    
             }
         ),
         dcc.Graph(id='athletes-heatmap')
