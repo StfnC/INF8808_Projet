@@ -6,10 +6,13 @@ from dash import dcc, html
 DATA_PATH = './data'
 def setup_viz_1(app):
     df = pd.read_csv(f'{DATA_PATH}/athletes.csv')
+
     df['Age'] = 2025 - pd.to_datetime(df['birth_date']).dt.year
     bins = list(range(df['Age'].min(), df['Age'].max() + 5, 5))
     labels = [f'{i}-{i+4}' for i in range(df['Age'].min(), df['Age'].max(), 5)]
     df['Age Group'] = pd.cut(df['Age'], bins=bins, labels=labels, right=False)
+    df['Age Group'] = pd.Categorical(df['Age Group'], categories=labels, ordered=True)
+
 
     sport_to_category = {
         'Table Tennis': 'Sports de raquette',
@@ -76,7 +79,8 @@ def setup_viz_1(app):
                 'Age Group': "Groupe d'âge",
                 'count': "Nombre d'athlètes"
             },
-            height=600
+            height=600,
+            category_orders={'Age Group': labels},
         )
         
     fig.update_layout(
