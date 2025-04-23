@@ -163,7 +163,11 @@ def setup_viz_6(app):
             id="country-dropdown",
             options=[{"label": "Tous", "value": "all"}] +
                     [{"label": row['country'], "value": row['country_code']} for _, row in top_countries.iterrows()],
-            value="all"
+            value="all",
+            style={
+                'color': 'black',            
+                'backgroundColor': 'white'    
+            }
         ),
         dcc.Graph(id="graph6")
     ])
