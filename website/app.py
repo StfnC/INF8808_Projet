@@ -22,8 +22,8 @@ parallax_sections = [
         'text_color': '#ecf0f1'
     },
     {
-        'title': "bla bla bla",
-        'description': "bla bla bla",
+        'title': "Les jeunes dominent... partout dans le monde?",
+        'description': "Lorsqu'on regarde la distribution des athlètes dans le monde, il est clair que les athlètes dans la vingtaine sont encore en majorité. Cela implique que les disciplines plus sportives semblent être les sports où les pays envoient le plus d'athlètes.",
         'viz': setup_viz_2(app),
         'bg_color': '#3498db',
         'text_color': '#ffffff'
