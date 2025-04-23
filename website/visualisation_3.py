@@ -6,8 +6,8 @@ import geojson
 
 from utils import categories
 
-DATA_PATH = "../data"
-GEO_PATH = "../data/geojson"
+DATA_PATH = "./data"
+GEO_PATH = "./data/geojson"
 
 
 def load_data():
