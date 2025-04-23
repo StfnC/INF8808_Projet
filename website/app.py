@@ -1,6 +1,4 @@
-from dash import Dash, html, dcc
-import pandas as pd
-import plotly.express as px
+from dash import Dash, html
 from visualisation_1 import setup_viz_1
 from visualisation_2 import setup_viz_2
 from visualisation_3 import setup_viz_3

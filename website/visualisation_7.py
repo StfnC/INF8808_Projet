@@ -1,9 +1,7 @@
 # Age Distribution by Gender Within Sports box plot
-from dash import Dash, dcc, html, Input, Output
+from dash import dcc, html, Input, Output
 import pandas as pd
 import plotly.express as px
-import numpy as np
-import plotly.graph_objects as go
 import ast
 
 

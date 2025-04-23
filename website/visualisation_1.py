@@ -1,10 +1,6 @@
-import matplotlib.pyplot as plt
-import seaborn as sns
 import pandas as pd
-import numpy as np
-import ast
 import plotly.express as px
-from dash import Dash, dcc, html, Input, Output  
+from dash import dcc, html  
 
 
 DATA_PATH = './data'
@@ -87,7 +83,7 @@ def setup_viz_1(app):
         xaxis_title="Groupe d'âge",
         yaxis_title='Catégorie de sports',
         yaxis={'categoryorder': 'total ascending'},
-        coloraxis_colorbar_title='count',
+        coloraxis_colorbar_title="Nombre d'athlètes",
         margin=dict(l=20, r=20, t=60, b=20)
     )
 

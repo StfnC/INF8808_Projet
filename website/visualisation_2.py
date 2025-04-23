@@ -1,10 +1,6 @@
-import matplotlib.pyplot as plt
-import seaborn as sns
 import pandas as pd
-import numpy as np
-import ast
 import plotly.express as px
-from dash import Dash, dcc, html, Input, Output
+from dash import dcc, html, Input, Output
 
 continent_map = {
     'africa': ['algeria', 'angola', 'benin', 'botswana', 'burkina faso', 'burundi', 'cabo verde', 'cameroon', 'central african republic', 'chad', 'comoros', 'congo', 'democratic republic of the congo', 'djibouti', 'egypt', 'equatorial guinea', 'eritrea', 'eswatini', 'ethiopia', 'gabon', 'gambia', 'ghana', 'guinea', 'guinea-bissau', 'ivory coast', 'kenya', 'lesotho', 'liberia', 'libya', 'madagascar', 'malawi', 'mali', 'mauritania', 'mauritius', 'morocco', 'mozambique', 'namibia', 'niger', 'nigeria', 'rwanda', 'sao tome and principe', 'senegal', 'seychelles', 'sierra leone', 'somalia', 'south africa', 'south sudan', 'sudan', 'tanzania', 'togo', 'tunisia', 'uganda', 'zambia', 'zimbabwe', "côte d'ivoire", 'sao tome & principe', 'dr congo', 'centr afric re', 'united republic of tanzania'],
@@ -56,24 +52,24 @@ def setup_viz_2(app):
             y='country',
             z='Count',
             color_continuous_scale='Reds',
-            title=f'Number of athletes by age and country in {selected_continent.capitalize()}',
-            labels={'country': 'Country', 'Age Group': 'Age Group', 'Count': 'Number of Athletes'},
+            title=f"Nombre d'athlètes par groupe d'âge et pays en {selected_continent.capitalize()}",
+            labels={'country': 'Pays', 'Age Group': "Groupe d'âge", 'Count': "Nombre d'athlètes"},
             height=600
         )
         
         fig.update_layout(
-            xaxis_title='Age Group',
-            yaxis_title='Country',
+            xaxis_title="Groupe d'âge",
+            yaxis_title="Pays",
             yaxis={'categoryorder': 'total ascending'},
-            coloraxis_colorbar_title='Count',
+            coloraxis_colorbar_title="Nombre d'athlètes",
             margin=dict(l=20, r=20, t=60, b=20)
         )
         
         return fig
     
     return html.Div([
-        html.H1("Athlete Age Distribution by Country"),
-        html.P("Select a continent to view age distribution:"),
+        html.H1("Distribution de l'âge des athlètes par pays"),
+        html.P("Choisissez un continent pour voir la distribution des âges:"),
         dcc.Dropdown(
             id='continent-dropdown',
             options=[{'label': continent.capitalize(), 'value': continent} for continent in continents],

@@ -2,7 +2,6 @@ from dash import Dash, dcc, html, Input, Output
 import pandas as pd
 import plotly.express as px
 import numpy as np
-import plotly.graph_objects as go
 
 DATA_PATH = './data'
 
