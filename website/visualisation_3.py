@@ -80,24 +80,21 @@ def setup_viz_3(app):
 
     @app.callback(Output("choropleth", "figure"), Input("category-dropdown", "value"))
     def display_choropleth(category: str):
+        map_args = {
+            "data_frame": df_results,
+            "geojson": countries,
+            "locations": "country_code",
+            "featureidkey": "properties.iso_a3",
+            "labels": {"best_category": "Meilleure catégorie"},
+        }
+
         if category == "global":
-            fig = px.choropleth_map(
-                df_results,
-                geojson=countries,
-                color="best_category",
-                locations="country_code",
-                featureidkey="properties.iso_a3",
-            )
-            return fig
+            map_args["color"] = "best_category"
         else:
-            return px.choropleth_map(
-                df_results,
-                geojson=countries,
-                color=category,
-                locations="country_code",
-                featureidkey="properties.iso_a3",
-                color_continuous_scale="Reds",
-            )
+            map_args["color"] = category
+            map_args["color_continuous_scale"] = "Reds"
+
+        return px.choropleth_map(**map_args)
 
     return html.Div(
         [
