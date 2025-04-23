@@ -1,8 +1,6 @@
 from dash import dcc, html, Input, Output
 import pandas as pd
 import plotly.express as px
-import numpy as np
-from datetime import datetime
 
 DATA_PATH = './data'
 
