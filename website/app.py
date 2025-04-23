@@ -17,42 +17,42 @@ app = Dash(__name__, external_stylesheets=external_stylesheets)
 
 parallax_sections = [
     {
-        'title': "Historical Medal Trends",
+        'title': "bla bla bla",
         'description': "bla bla bla",
         'viz': setup_viz_1(app),
         'bg_color': '#2c3e50',
         'text_color': '#ecf0f1'
     },
     {
-        'title': "Athlete Performance by Age",
+        'title': "bla bla bla",
         'description': "bla bla bla",
         'viz': setup_viz_2(app),
         'bg_color': '#3498db',
         'text_color': '#ffffff'
     },
     {
-        'title': "Gender Representation",
+        'title': "bla bla bla",
         'description': "bla bla bla",
         'viz': setup_viz_3(app),
         'bg_color': '#e74c3c',
         'text_color': '#ffffff'
     },
     {
-        'title': "Host Country Advantage",        
+        'title': "bla bla bla",
         'description': "bla bla bla",
         'viz': setup_viz_5(app),
         'bg_color': '#2ecc71',
         'text_color': '#ffffff'
     },
     {
-        'title': "Sport Specialization",       
+        'title': "bla bla bla", 
         'description': "bla bla bla",
         'viz': setup_viz_6(app),
         'bg_color': '#9b59b6',
         'text_color': '#ffffff'
     },
     {
-        'title': "Medal Economics",
+        'title': "bla bla bla",
         'description': "bla bla bla",
         'viz': setup_vis_7(app),
         'bg_color': '#1abc9c',
@@ -113,7 +113,7 @@ for i, section in enumerate(parallax_sections):
                         ),
                         html.Div(
                             style={
-                                'backgroundColor': 'rgba(255, 255, 255, 0.9)',
+                                'backgroundColor': 'rgba(84, 84, 84, 1)',
                                 'padding': '20px',
                                 'borderRadius': '8px',
                                 'boxShadow': '0 4px 20px rgba(0,0,0,0.2)'
@@ -182,20 +182,6 @@ app.layout = html.Div(
         ),
         
         *parallax_children,
-        
-        html.Footer(
-            style={
-                'backgroundColor': '#2c3e50',
-                'color': 'white',
-                'padding': '40px',
-                'textAlign': 'center',
-                'fontFamily': 'Montserrat, sans-serif'
-            },
-            children=[
-                html.P("Data Source: Olympic Games Historical Dataset"),
-                html.P("Â© 2024 Olympic Data Analysis Project")
-            ]
-        ),
         
         html.Div(style={'display': 'none'}, children=[
             dcc.Markdown("""
