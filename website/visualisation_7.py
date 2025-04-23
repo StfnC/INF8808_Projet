@@ -125,7 +125,11 @@ def setup_vis_7(app):
             id="discipline-dropdown",
             options=[{"label": "Toutes", "value": "all"}] +
                     [{"label": discipline, "value": discipline} for discipline in available_disciplines],
-            value="all"
+            value="all",
+            style={
+                'color': 'black',            
+                'backgroundColor': 'white'    
+            }
         ),
         dcc.Graph(id="graph7")
     ])

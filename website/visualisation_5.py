@@ -113,7 +113,11 @@ def setup_viz_5(app):
                     {"label": "Argent", "value": "Silver Medal"},
                     {"label": "Bronze", "value": "Bronze Medal"}
                 ],
-                value="all"
+                value="all",
+                style={
+                'color': 'black',            
+                'backgroundColor': 'white'    
+            }
             ),
             dcc.Graph(id="graph5"),
         ]

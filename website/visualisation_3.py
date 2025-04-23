@@ -108,6 +108,10 @@ def setup_viz_3(app):
                 options=[{"label": cat, "value": cat} for cat in categories.keys()]
                 + [{"label": "Global", "value": "global"}],
                 value="global",
+                style={
+                'color': 'black',            
+                'backgroundColor': 'white'    
+            }
             ),
             dcc.Graph(id="choropleth"),
         ]

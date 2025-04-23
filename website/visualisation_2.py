@@ -78,7 +78,11 @@ def setup_viz_2(app):
             id='continent-dropdown',
             options=[{'label': continent.capitalize(), 'value': continent} for continent in continents],
             value=continents[0],
-            clearable=False
+            clearable=False,
+            style={
+                'color': 'black',            
+                'backgroundColor': 'white'    
+            }
         ),
         dcc.Graph(id='athletes-heatmap')
     ])
