@@ -17,8 +17,8 @@ app = Dash(__name__, external_stylesheets=external_stylesheets)
 
 parallax_sections = [
     {
-        'title': "bla bla bla",
-        'description': "bla bla bla",
+        'title': "Les jeunes dominent",
+        'description': "Les athlètes dans la vingtaine ont largement dominé les JO, avec une nette chute de représentativité après la trentaine. Les sports collectifs, les sports de combat et l'athlétisme sont les disciplines les plus représentées.",
         'viz': setup_viz_1(app),
         'bg_color': '#2c3e50',
         'text_color': '#ecf0f1'

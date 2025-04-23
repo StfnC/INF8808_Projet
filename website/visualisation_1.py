@@ -10,10 +10,13 @@ from dash import Dash, dcc, html, Input, Output
 DATA_PATH = './data'
 def setup_viz_1(app):
     df = pd.read_csv(f'{DATA_PATH}/athletes.csv')
+
     df['Age'] = 2025 - pd.to_datetime(df['birth_date']).dt.year
     bins = list(range(df['Age'].min(), df['Age'].max() + 5, 5))
     labels = [f'{i}-{i+4}' for i in range(df['Age'].min(), df['Age'].max(), 5)]
     df['Age Group'] = pd.cut(df['Age'], bins=bins, labels=labels, right=False)
+    df['Age Group'] = pd.Categorical(df['Age Group'], categories=labels, ordered=True)
+
 
     sport_to_category = {
         'Table Tennis': 'Sports de raquette',
@@ -72,22 +75,23 @@ def setup_viz_1(app):
             y='Sport Category',
             nbinsx=len(df['Age Group'].unique()),
             nbinsy=len(df['Sport Category'].unique()),
-            histfunc='count',
+            histfunc='Compte',
             color_continuous_scale='Reds',
             title="Nombre d'athlètes par groupe d'âge et catégorie de sport",
             labels={
                 'Sport Category': 'Catégorie de sports',
                 'Age Group': "Groupe d'âge",
-                'count': "Nombre d'athlètes"
+                'Compte': "Nombre d'athlètes"
             },
-            height=600
+            height=600,
+            category_orders={'Age Group': labels},
         )
         
     fig.update_layout(
         xaxis_title="Groupe d'âge",
         yaxis_title='Catégorie de sports',
         yaxis={'categoryorder': 'total ascending'},
-        coloraxis_colorbar_title='count',
+        coloraxis_colorbar_title='Compte',
         margin=dict(l=20, r=20, t=60, b=20)
     )
 
