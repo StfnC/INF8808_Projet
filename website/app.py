@@ -29,8 +29,8 @@ parallax_sections = [
         'text_color': '#ffffff'
     },
     {
-        'title': "bla bla bla",
-        'description': "bla bla bla",
+        'title': "Pays différent, sports différents!",
+        'description': "Certains pays ont remporté beaucoup plus de médailles olympiques que d'autres dans certaines disciplines. Un sport pourrait être plus pratiqué dans un pays en particulier à cause de sa culture sportive et des conditions météorologiques ou géographiques, par exemple.",
         'viz': setup_viz_3(app),
         'bg_color': '#e74c3c',
         'text_color': '#ffffff'
