@@ -1,9 +1,8 @@
 import pandas as pd
 import plotly.express as px
-from dash import dcc, html  
+from dash import dcc, html
+from utils import DATA_PATH
 
-
-DATA_PATH = './data'
 def setup_viz_1(app):
     df = pd.read_csv(f'{DATA_PATH}/athletes.csv')
 

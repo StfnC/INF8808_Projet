@@ -3,9 +3,7 @@ from dash import dcc, html, Input, Output
 import pandas as pd
 import plotly.express as px
 import ast
-
-
-DATA_PATH = './data'
+from utils import DATA_PATH
 
 
 def load_data():

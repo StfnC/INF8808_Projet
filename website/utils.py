@@ -1,3 +1,7 @@
+import platform
+
+DATA_PATH = "../data" if (platform.system() == 'Windows') else "./data"
+
 categories = {
     'sports de raquette': ['tennis', 'table tennis', 'badminton'],
  '-athlon': ['triathlon', 'modern pentathlon'],
@@ -11,3 +15,4 @@ categories = {
     'combat': [ 'fencing', 'wrestling', 'judo', 'boxing', 'taekwondo'],
     'autres': ['equestrian', 'surfing', 'sport climbing', 'skateboarding', 'breaking']
 }
+

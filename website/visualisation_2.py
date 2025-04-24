@@ -1,6 +1,7 @@
 import pandas as pd
 import plotly.express as px
 from dash import dcc, html, Input, Output
+from utils import DATA_PATH
 
 continent_map = {
     'africa': ['algeria', 'angola', 'benin', 'botswana', 'burkina faso', 'burundi', 'cabo verde', 'cameroon', 'central african republic', 'chad', 'comoros', 'congo', 'democratic republic of the congo', 'djibouti', 'egypt', 'equatorial guinea', 'eritrea', 'eswatini', 'ethiopia', 'gabon', 'gambia', 'ghana', 'guinea', 'guinea-bissau', 'ivory coast', 'kenya', 'lesotho', 'liberia', 'libya', 'madagascar', 'malawi', 'mali', 'mauritania', 'mauritius', 'morocco', 'mozambique', 'namibia', 'niger', 'nigeria', 'rwanda', 'sao tome and principe', 'senegal', 'seychelles', 'sierra leone', 'somalia', 'south africa', 'south sudan', 'sudan', 'tanzania', 'togo', 'tunisia', 'uganda', 'zambia', 'zimbabwe', "côte d'ivoire", 'sao tome & principe', 'dr congo', 'centr afric re', 'united republic of tanzania'],
@@ -19,7 +20,7 @@ def map_country_to_continent(country):
     return 'unknown'  
 
 def setup_viz_2(app):
-    df = pd.read_csv('./data/athletes.csv')
+    df = pd.read_csv(f'{DATA_PATH}/athletes.csv')
     df['country'] = df['country_long'].str.lower()
     df['continent'] = df['country'].apply(map_country_to_continent)
     df['Age'] = 2025 - pd.to_datetime(df['birth_date']).dt.year
