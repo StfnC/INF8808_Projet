@@ -53,8 +53,8 @@ parallax_sections = [
         'text_color': '#ffffff'
     },
     {
-        'title': "bla bla bla",
-        'description': "bla bla bla",
+        'title': "Au sommet du sport",
+        'description': "Une corrélation claire existe entre la grandeur des athlètes et le sport pratiqué. Cependant, on voit que la grandeur n'est pas aussi importante en badminton qu'en basketball par exemple. Comme quoi, tout le monde peut faire du sport!",
         'viz': setup_vis_7(app),
         'bg_color': '#1abc9c',
         'text_color': '#ffffff'
