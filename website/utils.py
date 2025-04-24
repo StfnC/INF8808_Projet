@@ -1,6 +1,4 @@
-import platform
-
-DATA_PATH = "../data" if (platform.system() == 'Windows') else "./data"
+DATA_PATH = "./data"
 
 categories = {
     'sports de raquette': ['tennis', 'table tennis', 'badminton'],
