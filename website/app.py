@@ -214,29 +214,20 @@ app.layout = html.Div(
 app.clientside_callback(
     """
     function() {
-        // This will run when the page loads
         const sections = document.querySelectorAll('.parallax-section');
-        
         function checkScroll() {
             sections.forEach(section => {
                 const content = section.querySelector('.parallax-content');
                 const sectionTop = section.getBoundingClientRect().top;
                 const windowHeight = window.innerHeight;
-                
-                // If section is in view
                 if (sectionTop < windowHeight * 0.75 && sectionTop > -windowHeight * 0.25) {
                     content.style.opacity = 1;
                     content.style.transform = 'translateY(0)';
                 }
             });
         }
-        
-        // Run once on load
         checkScroll();
-        
-        // Then run on scroll
         window.addEventListener('scroll', checkScroll);
-        
         return window.scrollY;
     }
     """,
