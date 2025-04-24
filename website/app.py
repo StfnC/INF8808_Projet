@@ -45,8 +45,9 @@ parallax_sections = [
         'text_color': '#ffffff'
     },
     {
-        'title': "bla bla bla", 
-        'description': "bla bla bla",
+        'title': "Mais, qui sont réellement les meilleurs?", 
+        'description': "Il est certe possible de qualifier le pays ayant remporté le plus médailles comme étant le gagnant des jeux olympiques. "
+        "Cette méthode n'est toutefois pas réellement juste; le nombre de médailles gagnées en fonction du nombre d'athlètes envoyés nous donne une meilleure idée de quels pays ont le mieux performé en 2024.",
         'viz': setup_viz_6(app),
         'bg_color': '#9b59b6',
         'text_color': '#ffffff'
