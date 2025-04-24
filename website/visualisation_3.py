@@ -7,6 +7,7 @@ from utils import categories, DATA_PATH
 
 GEO_PATH = f"{DATA_PATH}/geojson"
 
+
 def load_data():
     medals_df = pd.read_csv(f"{DATA_PATH}/medals.csv")
     with open(f"{GEO_PATH}/countries.geo.json", encoding="utf8") as file:
@@ -83,6 +84,7 @@ def setup_viz_3(app):
             "locations": "country_code",
             "featureidkey": "properties.iso_a3",
             "labels": {"best_category": "Meilleure catégorie"},
+            "zoom": 1,
         }
 
         if category == "global":
@@ -91,7 +93,11 @@ def setup_viz_3(app):
             map_args["color"] = category
             map_args["color_continuous_scale"] = "Reds"
 
-        return px.choropleth_map(**map_args)
+        fig = px.choropleth_map(**map_args)
+
+        fig.update_layout(height=700)
+
+        return fig
 
     return html.Div(
         [
@@ -102,10 +108,7 @@ def setup_viz_3(app):
                 options=[{"label": cat, "value": cat} for cat in categories.keys()]
                 + [{"label": "Global", "value": "global"}],
                 value="global",
-                style={
-                'color': 'black',            
-                'backgroundColor': 'white'    
-            }
+                style={"color": "black", "backgroundColor": "white"},
             ),
             dcc.Graph(id="choropleth"),
         ]
