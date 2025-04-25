@@ -96,7 +96,7 @@ for i, section in enumerate(parallax_sections):
                         html.H2(
                             section['title'],
                             style={
-                                'fontSize': '3rem',
+                                'fontSize': '4rem',
                                 'marginBottom': '20px',
                                 'fontFamily': 'Montserrat, sans-serif',
                                 'fontWeight': '700'
@@ -105,7 +105,7 @@ for i, section in enumerate(parallax_sections):
                         html.P(
                             section['description'],
                             style={
-                                'fontSize': '1.2rem',
+                                'fontSize': '3rem',
                                 'marginBottom': '40px',
                                 'fontFamily': 'Montserrat, sans-serif',
                                 'fontWeight': '300',
@@ -148,10 +148,11 @@ app.layout = html.Div(
                 'overflow': 'hidden'
             },
             children=[
+                html.Img(src=app.get_asset_url('logo.png')),
                 html.H1(
                     "Analyses des Jeux Olympiques de Paris 2024",
                     style={
-                        'fontSize': '4rem',
+                        'fontSize': '6rem',
                         'marginBottom': '20px',
                         'fontFamily': 'Montserrat, sans-serif',
                         'fontWeight': '700',
@@ -162,12 +163,12 @@ app.layout = html.Div(
                 html.P(
                     "Une exploration de l'histoire et des tendances olympiques basée sur les données",
                     style={
-                        'fontSize': '1.5rem',
+                        'fontSize': '5rem',
                         'maxWidth': '800px',
                         'marginBottom': '40px',
                         'fontFamily': 'Montserrat, sans-serif',
                         'fontWeight': '300',
-                        'zIndex': 2
+                        'zIndex': 2, 
                     }
                 ),
                 html.Div(
