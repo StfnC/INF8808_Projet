@@ -95,13 +95,13 @@ def setup_viz_3(app):
 
         fig = px.choropleth_map(**map_args)
 
-        fig.update_layout(height=700)
+        fig.update_layout(height=640)
 
         return fig
 
     return html.Div(
         [
-            html.H1("Médailles olmpiques par pays et par catégorie"),
+            html.H3("Médailles olmpiques par pays et par catégorie"),
             html.P("Sélectionnez une catégorie"),
             dcc.Dropdown(
                 id="category-dropdown",

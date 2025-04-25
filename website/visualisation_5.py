@@ -1,4 +1,4 @@
-from dash import dcc, html, Input, Output
+from dash import dcc, html
 import pandas as pd
 import plotly.express as px
 from utils import DATA_PATH
@@ -68,7 +68,7 @@ def create_visualization(df: pd.DataFrame):
     fig.update_traces(marker=dict(sizemode='area', line=dict(width=0.5, color='white')))
     fig.update_layout(
         plot_bgcolor='rgba(240, 240, 240, 0.5)',
-        height=800,
+        height=680,
         legend_title_text="Type de médaille",
         xaxis=dict(title="Âge", gridcolor='white', range=[15, 60]),
         yaxis=dict(title="Discipline", gridcolor='white', categoryorder='total ascending'),
@@ -90,7 +90,7 @@ def setup_viz_5(app):
 
     return html.Div(
         [
-            html.H1("Âge et Discipline des Athlètes Médaillés"),
+            html.H3("Âge et Discipline des Athlètes Médaillés"),
             dcc.Graph(id="graph5", figure=fig),
         ]
     )

@@ -69,7 +69,7 @@ def setup_viz_2(app):
         return fig
     
     return html.Div([
-        html.H1("Distribution de l'âge des athlètes par pays"),
+        html.H3("Distribution de l'âge des athlètes par pays"),
         html.P("Choisissez un continent pour voir la distribution des âges:"),
         dcc.Dropdown(
             id='continent-dropdown',
