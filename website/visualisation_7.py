@@ -115,7 +115,7 @@ def setup_vis_7(app):
         return create_figure(height_athletes_df, selected_discipline)
 
     return html.Div([
-        html.H1("Taille des athlètes par genre et discipline"),
+        html.H3("Taille des athlètes par genre et discipline"),
         html.P("Choisir une discipline spécifique pour filtrer :"),
         dcc.Dropdown(
             id="discipline-dropdown",

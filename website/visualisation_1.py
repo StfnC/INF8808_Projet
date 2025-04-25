@@ -91,7 +91,7 @@ def setup_viz_1(app):
     )
 
     return html.Div([
-        html.H1("Répartition par âge des athlètes par catégorie sportive"),
+        html.H3("Répartition par âge des athlètes par catégorie sportive"),
         dcc.Graph(figure=fig)
     ])
 

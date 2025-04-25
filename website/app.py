@@ -85,7 +85,7 @@ for i, section in enumerate(parallax_sections):
                     id=f'content-{i}',
                     className='parallax-content',
                     style={
-                        'width': '80%',
+                        'width': '90%',
                         'margin': '0 auto',
                         'opacity': 0,
                         'transform': 'translateY(50px)',
@@ -96,7 +96,7 @@ for i, section in enumerate(parallax_sections):
                         html.H2(
                             section['title'],
                             style={
-                                'fontSize': '4rem',
+                                'fontSize': '3.5rem',
                                 'marginBottom': '20px',
                                 'fontFamily': 'Montserrat, sans-serif',
                                 'fontWeight': '700'
@@ -105,8 +105,8 @@ for i, section in enumerate(parallax_sections):
                         html.P(
                             section['description'],
                             style={
-                                'fontSize': '3rem',
-                                'marginBottom': '40px',
+                                'fontSize': '2.5rem',
+                                'marginBottom': '20px',
                                 'fontFamily': 'Montserrat, sans-serif',
                                 'fontWeight': '300',
                                 'lineHeight': '1.6'

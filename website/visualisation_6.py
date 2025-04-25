@@ -4,6 +4,8 @@ import plotly.express as px
 import numpy as np
 from utils import DATA_PATH
 
+GRAPH_HEIGHT = 640
+
 def load_data():
     medals_df = pd.read_csv(f'{DATA_PATH}/medals_total.csv')
     athletes_df = pd.read_csv(f'{DATA_PATH}/athletes.csv')
@@ -44,7 +46,7 @@ def create_visualization(combined_df: pd.DataFrame):
                     trendline="ols")  
 
     fig.update_layout(
-        height=800, 
+        height=GRAPH_HEIGHT, 
         autosize=True,
         margin=dict(l=50, r=50, b=100, t=100, pad=4)
     )
@@ -126,7 +128,7 @@ def setup_viz_6(app):
                          title="Efficacité des médailles : Total vs Nombre d'athlètes (Top 25)",
                          trendline="ols")
 
-        fig.update_layout(height=800, autosize=True, margin=dict(l=50, r=50, b=100, t=100))
+        fig.update_layout(height=GRAPH_HEIGHT, autosize=True, margin=dict(l=50, r=50, b=100, t=100))
         fig.update_traces(marker=dict(opacity=0.8, line=dict(width=0.5, color='DarkSlateGrey')),
                           textposition='top center',
                           selector=dict(mode='markers+text'))
@@ -156,7 +158,7 @@ def setup_viz_6(app):
         return create_figure(df)
 
     return html.Div([
-        html.H1("Efficacité des Médailles"),
+        html.H3("Efficacité des Médailles"),
         html.P("Filtrer par pays"),
         dcc.Dropdown(
             id="country-dropdown",
