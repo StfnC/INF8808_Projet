@@ -171,6 +171,15 @@ app.layout = html.Div(
                         'zIndex': 2, 
                     }
                 ),
+                html.P("Par: Stefan Cotargasanu, Jacob Ducas, Justine Ouellette, Marianna Prud'homme, Faneva Rakotoarivony et Saad Bouasla,",
+                       style={
+                        'fontSize': '2rem',
+                        'maxWidth': '800px',
+                        'marginBottom': '40px',
+                        'fontFamily': 'Montserrat, sans-serif',
+                        'fontWeight': '300',
+                        'zIndex': 2, 
+                       }),
                 html.Div(
                     "Faites défiler pour explorer",
                     style={
